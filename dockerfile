@@ -1,5 +1,5 @@
 FROM centos:7
-RUN yum update -y && yum clena all
+RUN yum update -y && yum clean all
 RUN yum install -y httpd && yum clean all 
 ENV container docker
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
