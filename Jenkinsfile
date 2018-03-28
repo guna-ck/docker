@@ -3,7 +3,7 @@ node {
 	state('Clone repository') {
 	checkout scm
   }
-state('Build image') {
+stage('Build image') {
 	app = docker.build("docker/cent")
 }
 stage('Test image') {
