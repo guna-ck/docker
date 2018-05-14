@@ -19,6 +19,7 @@ node {
          * Run a curl inside the newly-build Docker image */
 
         app.inside {
+            sh 'systemctl start httpd'
             sh 'curl http://localhost:80 || exit 1'
         }
     }
