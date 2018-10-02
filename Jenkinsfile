@@ -18,7 +18,7 @@ node {
 
     stage('Push to Docker Registry'){
         withCredentials([usernamePassword(credentialsId: 'DockerHubCredentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            app.push('latest')
+            app.push('guna/cent-systmd:latest')
         }
     }
 }
