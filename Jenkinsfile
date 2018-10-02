@@ -11,14 +11,14 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("cent-systemd")
+        app = docker.build("gunack23/cent-systemd")
     }
 
     
 
     stage('Push to Docker Registry'){
         withCredentials([usernamePassword(credentialsId: 'DockerHubCredentials', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            app.push('guna/cent-systemd:latest')
+            app.push('latest')
         }
     }
 }
